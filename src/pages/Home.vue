@@ -1,5 +1,5 @@
 <template>
-  <q-page class="q-pa-md">
+  <q-page class="q-pa-md row items-start q-gutter-md">
    <div>
      <q-list bordered separator v-if="allContacts.length">
        <div >

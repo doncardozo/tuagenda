@@ -1,10 +1,8 @@
 <template>
-  <q-card clickable v-ripple class="my-card bg-secondary text-white">
-     <q-card-section>
-        <div class="text-h6">{{contact.doc.name}}</div>
-        <div class="text-subtitle2" v-if="contact.doc.email">{{contact.doc.email}}</div>
-      </q-card-section>
-    <q-card-actions side>
+  <q-item clickable v-ripple>
+    <q-item-section>{{contact.doc.name}}</q-item-section>
+    <q-item-section v-if="contact.doc.email">{{contact.doc.email}}</q-item-section>
+    <q-item-section side>
       <div class="row">
         <q-btn 
           @click.stop="showEditContact = true"
@@ -17,7 +15,7 @@
           flat 
           icon="delete" />
       </div>
-    </q-card-actions>
+    </q-item-section>
 
     <q-dialog v-model="showEditContact">
       <EditForm 
@@ -25,7 +23,7 @@
         :contact="contact"
       />
     </q-dialog>
-  </q-card>
+  </q-item>
 </template>
 
 <script>
@@ -63,9 +61,5 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
-.my-card
-  width: 100%
-  max-width: 500px
-  margin-bottom: 5px
+<style>
 </style>
